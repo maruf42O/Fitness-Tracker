@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /* Loop through a collection of all HTML elements: */
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                elmnt.innerHTML = this.responseText;
+              }
+              if (this.status == 404) {
+                elmnt.innerHTML = "Page not found.";
+              }
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          };
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+  </script>
+
+  <div w3-include-html="../components/header.html"></div>
+  <body>
+    <div class="container" style="padding-top: 30px">
+      <h3 class="text-center">Library</h3>
+
+      <div class="text-center" style="margin-top: 30px">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="36"
+          height="36"
+          fill="currentColor"
+          class="bi bi-collection-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1"
+          />
+        </svg>
+      </div>
+
+      <input
+        class="form-control"
+        placeholder="search..."
+        style="margin-bottom: 10px; margin-top: 30px"
+      />
+
+      <!--Show Modal-->
+      <div
+        class="modal fade"
+        id="library_info_modal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="library_info_modal">
+                About This Exercise
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p class="justify-content-center flex-wrap" id="">
+                Hi this is it. There's nothing to see
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Buy
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 row-cols-3" style="margin-top: 30px">
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <img
+              src="../assets/library_img/pexels-scott-webb-28076.jpg"
+              class="card-img-top"
+              alt="..."
+              style="height: 250px; width: 100%"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Hi sajbd s hsdj aksdka s dak jsd ajs gda dka d a sdkjag dakj ds
+                da sdksjakd akjdkja dkjshkjd ak sd
+              </p>
+              <div class="text-end">
+                <button
+                  class="btn btn-outline-primary"
+                  onclick=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#library_info_modal"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <img
+              src="../assets/library_img/pexels-scott-webb-28080.jpg"
+              class="card-img-top"
+              alt="..."
+              style="height: 250px; width: 100%"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">hi</p>
+              <div class="text-end">
+                <button
+                  class="btn btn-outline-primary"
+                  onclick=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#library_info_modal"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <img
+              src="../assets/library_img/pexels-tembela-bohle-2803158.jpg"
+              class="card-img-top"
+              alt="..."
+              style="height: 250px; width: 100%"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                hi sahdh ashdkja jdh ajs hdkjahd ajh sadhk ahdkjsah jdhaj sdjas
+                d aks dkas dkj hsd as dkjsh
+              </p>
+              <div class="text-end">
+                <button
+                  class="btn btn-outline-primary"
+                  onclick=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#library_info_modal"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <img
+              src="../assets/library_img/pexels-victor-freitas-703014.jpg"
+              class="card-img-top"
+              alt="..."
+              style="height: 250px; width: 100%"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">hi</p>
+              <div class="text-end">
+                <button
+                  class="btn btn-outline-primary"
+                  onclick=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#library_info_modal"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <img
+              src="../assets/library_img/pexels-victor-freitas-841130.jpg"
+              class="card-img-top"
+              alt="..."
+              style="height: 250px; width: 100%"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">hi</p>
+              <div class="text-end">
+                <button
+                  class="btn btn-outline-primary"
+                  onclick=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#library_info_modal"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <img
+              src="../assets/library_img/pexels-william-choquette-1954524.jpg"
+              class="card-img-top"
+              alt="..."
+              style="height: 250px; width: 100%"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                hi sah djasda shdak sdjkasdj ad akj skd ak sjdkakj sdajs da s
+                dakjsd ajk sdadk a jsd ak djksa dksa
+              </p>
+              <div class="text-end">
+                <button
+                  class="btn btn-outline-primary"
+                  onclick=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#library_info_modal"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <div w3-include-html="../components/footer.html"></div>
+  </footer>
+  <script>
+    includeHTML();
+  </script>
+</html>
