@@ -1,7 +1,7 @@
 <?php
 
 class BlogModel {
-    private $db; // Assume you have a database connection in $db
+    private $db; 
 
     public function __construct($db) {
         $this->db = $db;
@@ -12,8 +12,6 @@ class BlogModel {
         $result = $this->db->query($query);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-
-    // Add functions for retrieving blog post details by ID, adding new blog posts, etc.
 }
 
 ?>

@@ -1,15 +1,13 @@
 <?php
 
 class UserModel {
-    private $db; // Assume you have a database connection in $db
+    private $db;
 
     public function __construct($db) {
         $this->db = $db;
     }
 
     public function createUser($userData) {
-        // Assume $userData is an associative array with user details
-        // For simplicity, password should be hashed in a real-world scenario
         $hashedPassword = password_hash($userData['password'], PASSWORD_DEFAULT);
         
         $query = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
@@ -38,8 +36,6 @@ class UserModel {
         $stmt->close();
         return $result;
     }
-
-    // Add functions for updating and deleting users as needed
 }
 
 ?>

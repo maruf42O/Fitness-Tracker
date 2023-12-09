@@ -1,9 +1,9 @@
 <?php
 
 class UserStatsModel {
-    private $db; // Assume you have a database connection in $db
+    private $db;
 
-    public function __construct($db) {
+    public function __construct(Database $db) {
         $this->db = $db;
     }
 
@@ -16,8 +16,6 @@ class UserStatsModel {
         $stmt->close();
         return $result;
     }
-
-    // Add functions for retrieving and calculating other user statistics
 }
 
 ?>

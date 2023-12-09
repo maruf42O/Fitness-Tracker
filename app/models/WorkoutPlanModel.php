@@ -1,17 +1,18 @@
 <?php
-
+require_once 'C:\xampp\htdocs\FitnessTracker\app\models\WorkoutPlanModel.php';
+require_once 'C:\xampp\htdocs\FitnessTracker\app\config\Database.php';
 class WorkoutPlanModel {
-    private $db; // Assume you have a database connection in $db
+    private $db;
 
     public function __construct($db) {
         $this->db = $db;
     }
 
-    public function createWorkoutPlan($planData) {
-        // Assume $planData is an associative array with plan details
+
+    public function createWorkoutPlan($planName, $planDescription, $planData) {
         $query = "INSERT INTO workout_plans (title, description, difficulty) VALUES (?, ?, ?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param("sss", $planData['title'], $planData['description'], $planData['difficulty']);
+        $stmt->bind_param("sss", $planName['title'], $planData['description'], $planData['difficulty']);
         $stmt->execute();
         $stmt->close();
     }
@@ -25,8 +26,6 @@ class WorkoutPlanModel {
         $stmt->close();
         return $result;
     }
-
-    // Add functions for updating and deleting workout plans as needed
 }
 
 ?>

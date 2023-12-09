@@ -1,7 +1,7 @@
 <?php
 
 class SearchModel {
-    private $db; // Assume you have a database connection in $db
+    private $db;
 
     public function __construct($db) {
         $this->db = $db;
@@ -17,8 +17,6 @@ class SearchModel {
         $stmt->close();
         return $result;
     }
-
-    // Add functions for filtering workouts based on criteria (duration, difficulty, etc.)
 }
 
 ?>
