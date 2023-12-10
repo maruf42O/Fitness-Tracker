@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                elmnt.innerHTML = this.responseText;
+              }
+              if (this.status == 404) {
+                elmnt.innerHTML = "Page not found.";
+              }
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          };
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          return;
+        }
+      }
+    }
+  </script>
+
+  <div w3-include-html="../components/header.html"></div>
+  <body>
+    <div class="container text-center" style="padding-top: 30px">
+      <h3 class="text-center">Live Exercise</h3>
+
+      <div class="text-center" style="margin-top: 30px">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="36"
+          height="36"
+          fill="currentColor"
+          class="bi bi-play-circle-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5"
+          />
+        </svg>
+      </div>
+
+      <input
+        class="form-control"
+        placeholder="search..."
+        style="margin-bottom: 10px; margin-top: 30px"
+      />
+      <!--Big Card-->
+      <div class="row g-4 row-cols-1" style="margin-top: 30px">
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <video class="card-img-top" autoplay muted>
+              <source
+                src="../assets/live_vdos/pexels_videos_3414 (1080p).mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Hi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Smaller Cards-->
+      <div class="row g-4 row-cols-2" style="margin-top: 10px">
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <video class="card-img-top" autoplay muted>
+              <source
+                src="../assets/live_vdos/pexels_videos_1689473 (1080p).mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Hi</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <video class="card-img-top" autoplay muted>
+              <source
+                src="../assets/live_vdos/pexels_videos_2376809 (1080p).mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">hi</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <video class="card-img-top" autoplay muted>
+              <source
+                src="../assets/live_vdos/video (1080p) (1).mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">hi</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <video class="card-img-top" autoplay muted>
+              <source
+                src="../assets/live_vdos/video (1080p).mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">hi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <div w3-include-html="C:\xampp\htdocs\FitnessTracker\app\views\components\footer.html"></div>
+  </footer>
+  <script>
+    includeHTML();
+  </script>
+</html>

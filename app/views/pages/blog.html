@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                elmnt.innerHTML = this.responseText;
+              }
+              if (this.status == 404) {
+                elmnt.innerHTML = "Page not found.";
+              }
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          };
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          return;
+        }
+      }
+    }
+  </script>
+
+  <div w3-include-html="../components/header.html"></div>
+  <body>
+    <div class="container" style="padding-top: 30px">
+      <h3 class="text-center">Blogs</h3>
+
+      <div class="text-center" style="margin-top: 30px">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="36"
+          height="36"
+          fill="currentColor"
+          class="bi bi-journal-album"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M5.5 4a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5zm1 7a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"
+          />
+          <path
+            d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"
+          />
+          <path
+            d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"
+          />
+        </svg>
+      </div>
+
+      <div class="text-center" style="padding-top: 30px">
+        <button
+          type="button"
+          class="btn btn-outline-primary btn-lg"
+          data-bs-toggle="modal"
+          data-bs-target="#blog_post_modal"
+        >
+          Post
+        </button>
+      </div>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="blog_post_modal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Post A Blog
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <label>Image</label>
+              <input class="input-group-text" type="file" />
+              <label>Title</label>
+              <input class="input-group-text" />
+              <label>Details</label>
+              <input class="input-group-text" />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Blogs group-->
+
+      <div class="row g-4 row-cols-1" style="padding-top: 30px">
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <img
+              src="../assets/blogs_img/pexels-li-sun-2294403.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Hi</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <img
+              src="../assets/blogs_img/pexels-pixabay-221210.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">hi</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <img
+              src="../assets/blogs_img/pexels-pixabay-39308.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">hi</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="card" style="width: auto; height: auto">
+            <img
+              src="../assets/blogs_img/pexels-pixabay-416717.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">hi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <div w3-include-html="../components/footer.html"></div>
+  </footer>
+  <script>
+    includeHTML();
+  </script>
+</html>
