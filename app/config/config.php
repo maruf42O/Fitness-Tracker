@@ -2,9 +2,9 @@
 
 
 
-define('DB_HOST', 'your_host');
-define('DB_USER', 'your_username');
-define('DB_PASSWORD', 'your_password');
-define('DB_NAME', 'your_database_name');
+define('DB_HOST', 'host');
+define('DB_USER', 'username');
+define('DB_PASSWORD', 'password');
+define('DB_NAME', 'database_name');
 
 ?>
